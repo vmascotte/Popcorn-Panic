@@ -10,6 +10,7 @@
 - Power-ups: throwable popcorn that explodes
 - Themed levels: TV channels like Sofa World, Space Pop, and more
 - Final boss: the Giant CRT Mutant TV
+- Levels progress automatically when you reach the end of a stage
 
 ---
 
