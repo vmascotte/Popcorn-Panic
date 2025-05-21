@@ -40,3 +40,17 @@ The repository contains only a few essential directories:
 - `scripts/` – GDScript code for gameplay, UI, and enemy logic
 - `assets/`  – game assets such as sound files in `assets/audio/`
 
+---
+
+## ✅ Running Tests
+
+Unit tests are included in the `tests/` directory. To run them you need
+to have **Godot 4.2** installed. From the project root, execute:
+
+```bash
+godot --headless -s tests/test_suite.gd
+```
+
+This launches Godot in headless mode and runs all test cases defined in
+`tests/test_suite.gd`.
+
