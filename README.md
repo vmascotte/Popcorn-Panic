@@ -26,10 +26,11 @@
 
 1. Download or clone this repo
 2. Open the folder in **Godot 4.2**
-3. In the Godot editor, run the `Level1.tscn` scene to start the game
+3. In the Godot editor, run the `Main.tscn` scene to start the game
 
-Levels are stored as individual scenes (`Level1.tscn`, `Level2.tscn`, and so on).
-Open a scene from the **FileSystem** dock to edit or test that level directly.
+This repository includes `Main.tscn` as a demo level. Additional stages can be
+added as separate `.tscn` files. Open any scene from the **FileSystem** dock to
+edit or test it directly.
 
 ---
 
