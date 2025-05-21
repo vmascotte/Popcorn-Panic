@@ -23,6 +23,8 @@ func on_pipoca_collected():
     ui.add_score(1)
     # Preserve score between levels
     score = ui.score
+    if ui.score >= 10:
+        on_level_completed()
 
 func on_player_hit():
     ui.remove_life()
@@ -44,6 +46,7 @@ func load_next_level():
     get_tree().change_scene_to_file(next_scene_path)
 
 func on_level_completed():
+    print("Channel switched… Get ready for the next dimension!")
     load_next_level()
 
 func on_boss_defeated():

@@ -1,0 +1,57 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource path="res://scripts/LevelManager.gd" type="Script" id=1]
+[ext_resource path="res://scripts/MrPlus.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=3]
+[ext_resource path="res://scripts/UI.gd" type="Script" id=4]
+[ext_resource path="res://assets/audio/jump.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/music.wav" type="AudioStream" id=6]
+[ext_resource path="res://Popcorn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/Exit.gd" type="Script" id=8]
+[ext_resource path="res://scripts/DisappearingBlock.gd" type="Script" id=9]
+[ext_resource path="res://scripts/SurpriseBlock.gd" type="Script" id=10]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource(1)
+levels = ["res://Level1.tscn"]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource(6)
+autoplay = true
+
+[node name="MrPlus" type="CharacterBody2D" parent="."]
+script = ExtResource(2)
+position = Vector2(16, 200)
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="MrPlus"]
+stream = ExtResource(5)
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+script = ExtResource(3)
+position = Vector2(400, 200)
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource(4)
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+text = "Popcorn: 0"
+
+[node name="LivesLabel" type="Label" parent="UI"]
+text = "Lives: 3"
+
+[node name="Popcorn1" type="Area2D" parent="."]
+instance = ExtResource(7)
+position = Vector2(128, 180)
+
+[node name="Exit" type="Area2D" parent="."]
+script = ExtResource(8)
+position = Vector2(1024, 200)
+
+[node name="DisBlock1" type="StaticBody2D" parent="."]
+script = ExtResource(9)
+position = Vector2(256, 160)
+
+[node name="Surprise1" type="StaticBody2D" parent="."]
+script = ExtResource(10)
+position = Vector2(320, 160)
+popcorn_scene = ExtResource(7)
