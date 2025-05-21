@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource path="res://scripts/LevelManager.gd" type="Script" id="1"]
+[ext_resource path="res://scripts/MrPlus.gd" type="Script" id="2"]
+[ext_resource path="res://scripts/UI.gd" type="Script" id="3"]
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id="4"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1")
+
+[node name="MrPlus" type="CharacterBody2D" parent="."]
+script = ExtResource("2")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3")
+
+[node name="Exit" type="Area2D" parent="."]
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+script = ExtResource("4")
+
+[connection signal="body_entered" from="Exit" to="." method="on_exit_body_entered"]
