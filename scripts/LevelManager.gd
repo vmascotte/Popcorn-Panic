@@ -10,11 +10,14 @@ static var lives: int = 3
 
 @onready var player := $MrPlus
 @onready var ui := $UI
+@onready var boss := get_node_or_null("Boss")
 
 func _ready():
     # When a new level loads, sync the UI with the stored state
     ui.update_lives(lives)
     ui.update_score(score)
+    if boss:
+        boss.boss_defeated.connect(on_boss_defeated)
 
 func on_pipoca_collected():
     ui.add_score(1)
@@ -41,4 +44,7 @@ func load_next_level():
     get_tree().change_scene_to_file(next_scene_path)
 
 func on_level_completed():
+    load_next_level()
+
+func on_boss_defeated():
     load_next_level()

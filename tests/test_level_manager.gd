@@ -16,6 +16,9 @@ class UIStub:
         if lives <= 0:
             reload_called = true
 
+class BossStub:
+    signal boss_defeated
+
 var manager
 
 func before_each():
@@ -40,3 +43,12 @@ func test_life_decrement_and_reload():
     assert_eq(manager.ui.lives, 1)
     manager.on_player_hit()
     assert_true(manager.ui.reload_called)
+
+func test_boss_defeated_triggers_next_level():
+    manager.boss = BossStub.new()
+    var called := false
+    manager.load_next_level = func():
+        called = true
+    manager._ready()
+    manager.boss.emit_signal("boss_defeated")
+    assert_true(called)
