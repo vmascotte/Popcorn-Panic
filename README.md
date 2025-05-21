@@ -25,9 +25,17 @@
 
 1. Download or clone this repo
 2. Open the folder in **Godot 4.2**
-3. Run the `Level1.tscn` scene
+3. In the Godot editor, run the `Level1.tscn` scene to start the game
+
+Levels are stored as individual scenes (`Level1.tscn`, `Level2.tscn`, and so on).
+Open a scene from the **FileSystem** dock to edit or test that level directly.
 
 ---
 
 ## 🛠️ Folder Structure
+
+The repository contains only a few essential directories:
+
+- `scripts/` – GDScript code for gameplay, UI, and enemy logic
+- `assets/`  – game assets such as sound files in `assets/audio/`
 
