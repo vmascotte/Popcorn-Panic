@@ -26,10 +26,11 @@
 
 1. Download or clone this repo
 2. Open the folder in **Godot 4.2**
-3. In the Godot editor, run the `Level1.tscn` scene to start the game
+3. In the Godot editor, run the `Main.tscn` scene to start the game
 
-Levels are stored as individual scenes (`Level1.tscn`, `Level2.tscn`, and so on).
-Open a scene from the **FileSystem** dock to edit or test that level directly.
+This repository includes `Main.tscn` as a demo level. Additional stages can be
+added as separate `.tscn` files. Open any scene from the **FileSystem** dock to
+edit or test it directly.
 
 ---
 
@@ -39,4 +40,18 @@ The repository contains only a few essential directories:
 
 - `scripts/` – GDScript code for gameplay, UI, and enemy logic
 - `assets/`  – game assets such as sound files in `assets/audio/`
+
+---
+
+## ✅ Running Tests
+
+Unit tests are included in the `tests/` directory. To run them you need
+to have **Godot 4.2** installed. From the project root, execute:
+
+```bash
+godot --headless -s tests/test_suite.gd
+```
+
+This launches Godot in headless mode and runs all test cases defined in
+`tests/test_suite.gd`.
 
